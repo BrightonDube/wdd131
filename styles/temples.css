@@ -104,3 +104,15 @@ h1 {
   color: var(--onyx);
   margin-bottom: 2rem;
 }
+
+footer {
+  background-color: var(--onyx);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
