@@ -1,73 +1,106 @@
 :root {
-    --hookers-green: #397367;
-    --robin-egg-blue: #63CCCA;
-    --keppel: #5DA399;
-    --dark-cyan: #42858C;
-    --onyx: #35393C;
+  --hookers-green: #397367;
+  --robin-egg-blue: #63ccca;
+  --keppel: #5da399;
+  --dark-cyan: #42858c;
+  --onyx: #35393c;
+  --white: #ffffff;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--robin-egg-blue);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--white);
 }
 
 header {
-    background-color: var(--hookers-green);
-    padding: 1rem;
-    position: relative;
+  background-color: var(--onyx);
+  padding: 1rem;
+  position: relative;
 }
 
 .logo {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 .hamburger {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    color: white;
-    cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  content: '☰';
+}
+
+.hamburger.active {
+  content: '✕';
 }
 
 .nav {
-    display: none;
-    width: 100%;
-    margin-top: 1rem;
+  display: none;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 .nav.active {
-    display: block;
+  display: block;
 }
 
 .nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav li {
-    margin: 1rem 0;
+  margin: 1rem 0;
 }
 
 .nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  display: block;
 }
 
 .nav a:hover {
-    color: var(--robin-egg-blue);
+  background-color: var(--robin-egg-blue);
+  color: var(--onyx);
 }
 
-/* When hamburger is clicked */
-.hamburger.active::before {
-    content: "✕";
+main {
+  background-color: var(--white);
+  padding: 2rem;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+figure {
+  margin: 1rem 0;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+h1 {
+  color: var(--onyx);
+  margin-bottom: 2rem;
 }
