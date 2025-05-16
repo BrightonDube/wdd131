@@ -1,0 +1,73 @@
+:root {
+    --hookers-green: #397367;
+    --robin-egg-blue: #63CCCA;
+    --keppel: #5DA399;
+    --dark-cyan: #42858C;
+    --onyx: #35393C;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--robin-egg-blue);
+}
+
+header {
+    background-color: var(--hookers-green);
+    padding: 1rem;
+    position: relative;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.hamburger {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.nav {
+    display: none;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.nav.active {
+    display: block;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    margin: 1rem 0;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.nav a:hover {
+    color: var(--robin-egg-blue);
+}
+
+/* When hamburger is clicked */
+.hamburger.active::before {
+    content: "✕";
+}
