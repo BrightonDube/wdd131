@@ -5,12 +5,14 @@
   --dark-cyan: #42858c;
   --onyx: #35393c;
   --white: #ffffff;
+  --heading-font: 'Lato', sans-serif;
+  --body-font: 'Roboto', sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: var(--body-font);
   background-color: var(--white);
 }
 
@@ -21,6 +23,7 @@ header {
 }
 
 .logo {
+  font-family: var(--heading-font);
   color: white;
   text-decoration: none;
   font-size: 1.5rem;
@@ -85,11 +88,17 @@ header {
 main {
   background-color: var(--white);
   padding: 2rem;
-  margin: 1rem;
+  margin: 0 auto;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  max-width: 960px;
 }
+section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 
 figure {
   margin: 1rem 0;
@@ -105,6 +114,7 @@ figure img {
 }
 
 figcaption {
+  font-family: var(--body-font);
   text-align: center;
   padding: 0.5rem;
   color: var(--onyx);
@@ -112,6 +122,7 @@ figcaption {
 }
 
 h1 {
+  font-family: var(--heading-font);
   color: var(--onyx);
   margin-bottom: 2rem;
 }
