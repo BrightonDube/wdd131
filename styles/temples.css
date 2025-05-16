@@ -88,16 +88,27 @@ main {
   margin: 1rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 figure {
   margin: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 figure img {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
+}
+
+figcaption {
+  text-align: center;
+  padding: 0.5rem;
+  color: var(--onyx);
+  font-weight: 500;
 }
 
 h1 {
