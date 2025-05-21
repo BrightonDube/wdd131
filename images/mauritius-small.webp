@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <!-- Background - ocean -->
+  <rect width="400" height="200" fill="#0077be"/>
+  
+  <!-- Island -->
+  <path d="M100,125 C125,100 175,90 225,100 C275,110 325,125 350,150 C300,175 200,190 150,175 C100,160 75,150 100,125 Z" fill="#228B22"/>
+  
+  <!-- Beach -->
+  <path d="M150,175 C200,190 300,175 350,150 L375,200 L125,200 Z" fill="#f5deb3"/>
+  
+  <!-- Mountains -->
+  <path d="M175,100 L200,75 L225,100 Z" fill="#808080"/>
+  <path d="M250,110 L275,85 L300,110 Z" fill="#808080"/>
+  
+  <!-- Palm trees -->
+  <line x1="140" y1="160" x2="140" y2="140" stroke="#8B4513" stroke-width="3"/>
+  <path d="M130,140 C135,135 145,135 150,140" stroke="#228B22" stroke-width="2" fill="none"/>
+  <path d="M130,143 C135,138 145,138 150,143" stroke="#228B22" stroke-width="2" fill="none"/>
+  <path d="M130,146 C135,141 145,141 150,146" stroke="#228B22" stroke-width="2" fill="none"/>
+  
+  <line x1="325" y1="160" x2="325" y2="140" stroke="#8B4513" stroke-width="3"/>
+  <path d="M315,140 C320,135 330,135 335,140" stroke="#228B22" stroke-width="2" fill="none"/>
+  <path d="M315,143 C320,138 330,138 335,143" stroke="#228B22" stroke-width="2" fill="none"/>
+  <path d="M315,146 C320,141 330,141 335,146" stroke="#228B22" stroke-width="2" fill="none"/>
+  
+  <!-- Sun -->
+  <circle cx="50" cy="50" r="25" fill="#FFD700"/>
+  
+  <!-- Boat -->
+  <path d="M75,160 L90,160 L82.5,170 Z" fill="#8B4513"/>
+  <rect x="82" y="150" width="1" height="10" fill="#8B4513"/>
+  <path d="M83,150 C90,155 90,145 83,150" fill="#FFFFFF"/>
+  
+  <!-- Flag of Mauritius -->
+  <rect x="25" y="25" width="30" height="20" fill="#EA2839"/>
+  <rect x="25" y="25" width="30" height="5" fill="#00A551"/>
+  <rect x="25" y="30" width="30" height="5" fill="#FFD500"/>
+  <rect x="25" y="35" width="30" height="5" fill="#1A206D"/>
+  
+  <!-- Text -->
+  <text x="200" y="25" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Mauritius</text>
+</svg>

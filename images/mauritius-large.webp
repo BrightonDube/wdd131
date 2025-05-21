@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <!-- Background - ocean -->
+  <rect width="800" height="400" fill="#0077be"/>
+  
+  <!-- Island -->
+  <path d="M200,250 C250,200 350,180 450,200 C550,220 650,250 700,300 C600,350 400,380 300,350 C200,320 150,300 200,250 Z" fill="#228B22"/>
+  
+  <!-- Beach -->
+  <path d="M300,350 C400,380 600,350 700,300 L750,400 L250,400 Z" fill="#f5deb3"/>
+  
+  <!-- Mountains -->
+  <path d="M350,200 L400,150 L450,200 Z" fill="#808080"/>
+  <path d="M500,220 L550,170 L600,220 Z" fill="#808080"/>
+  
+  <!-- Palm trees -->
+  <line x1="280" y1="320" x2="280" y2="280" stroke="#8B4513" stroke-width="5"/>
+  <path d="M260,280 C270,270 290,270 300,280" stroke="#228B22" stroke-width="3" fill="none"/>
+  <path d="M260,285 C270,275 290,275 300,285" stroke="#228B22" stroke-width="3" fill="none"/>
+  <path d="M260,290 C270,280 290,280 300,290" stroke="#228B22" stroke-width="3" fill="none"/>
+  
+  <line x1="650" y1="320" x2="650" y2="280" stroke="#8B4513" stroke-width="5"/>
+  <path d="M630,280 C640,270 660,270 670,280" stroke="#228B22" stroke-width="3" fill="none"/>
+  <path d="M630,285 C640,275 660,275 670,285" stroke="#228B22" stroke-width="3" fill="none"/>
+  <path d="M630,290 C640,280 660,280 670,290" stroke="#228B22" stroke-width="3" fill="none"/>
+  
+  <!-- Sun -->
+  <circle cx="100" cy="100" r="50" fill="#FFD700"/>
+  
+  <!-- Boat -->
+  <path d="M150,320 L180,320 L165,340 Z" fill="#8B4513"/>
+  <rect x="164" y="300" width="2" height="20" fill="#8B4513"/>
+  <path d="M166,300 C180,310 180,290 166,300" fill="#FFFFFF"/>
+  
+  <!-- Flag of Mauritius -->
+  <rect x="50" y="50" width="60" height="40" fill="#EA2839"/>
+  <rect x="50" y="50" width="60" height="10" fill="#00A551"/>
+  <rect x="50" y="60" width="60" height="10" fill="#FFD500"/>
+  <rect x="50" y="70" width="60" height="10" fill="#1A206D"/>
+  
+  <!-- Text -->
+  <text x="400" y="50" font-family="Arial" font-size="24" fill="white" text-anchor="middle">Mauritius</text>
+</svg>
