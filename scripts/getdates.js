@@ -3,7 +3,17 @@ const currentYear = new Date().getFullYear();
 document.getElementById('currentyear').textContent = currentYear;
 
 // Displays the document's last modified date
-document.getElementById('lastModified').textContent = `Last Updated: ${formatDate(document.lastModified)}`;
+const lastModified = localStorage.getItem('lastModified') || document.lastModified;
+const formattedDate = new Date(lastModified).toLocaleString('en-US', {
+  month: '2-digit',
+  day: '2-digit',
+  year: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+});
+document.getElementById('lastModified').textContent = formattedDate;
+localStorage.setItem('lastModified', new Date().toISOString());
 
 // Helper function to format the date more readably
 function formatDate(dateString) {
@@ -17,26 +27,5 @@ function formatDate(dateString) {
     return new Date(dateString).toLocaleDateString('en-ZA', options);
 }
 
-// Wind chill calculation
-document.addEventListener('DOMContentLoaded', () => {
-    // Check if windchill element exists on the page
-    const windChillElement = document.getElementById('windchill');
-    if (windChillElement) {
-        // Static values for temperature and wind speed (matching the displayed values)
-        const temperature = 10; // in Celsius
-        const windSpeed = 5; // in km/h
-        
-        // Check if conditions are met for wind chill calculation
-        if (temperature <= 10 && windSpeed > 4.8) {
-            const windChill = calculateWindChill(temperature, windSpeed);
-            windChillElement.textContent = `${windChill.toFixed(1)} °C`;
-        } else {
-            windChillElement.textContent = 'N/A';
-        }
-    }
-});
-
-// Function to calculate wind chill (using metric formula)
-function calculateWindChill(temperature, windSpeed) {
-    return 13.12 + 0.6215 * temperature - 11.37 * Math.pow(windSpeed, 0.16) + 0.3965 * temperature * Math.pow(windSpeed, 0.16);
-}
+// Call fetchWeatherData on DOMContentLoaded
+fetchWeatherData();

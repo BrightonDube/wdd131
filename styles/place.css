@@ -16,17 +16,24 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    gap: 1rem;
     background-color: var(--background-color);
+    color: var(--light-color);
 }
 
 header {
-    background-color: var(--primary-color);
-    color: var(--light-color);
-    text-align: center;
+    background-color: var(--secondary-color);
     padding: 1rem;
+    text-align: center;
+}
+
+footer {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    text-align: center;
 }
 
 header h1 {
