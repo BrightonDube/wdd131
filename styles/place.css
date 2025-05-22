@@ -95,7 +95,7 @@ main {
 h2 {
     font-family: 'Playfair Display', serif;
     color: var(--light-color);
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     margin-bottom: 1rem;
     font-size: 1.5rem;
     border-bottom: 2px solid var(--secondary-color);
