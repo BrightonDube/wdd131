@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +8,9 @@
     <title>Mauritius - Island Nation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
     <script src="scripts/getdates.js" defer></script>
 </head>
 
@@ -20,41 +18,48 @@
     <header>
         <h1>Mauritius</h1>
     </header>
+    
     <main>
         <div class="hero">
             <picture>
                 <source srcset="images/mauritius-large.webp" media="(min-width: 800px)">
                 <img src="images/mauritius-small.webp" alt="Beautiful beaches of Mauritius" width="100%" height="auto">
             </picture>
-        </div>
+            
+            <div class="overlay-content">
+                <section class="data-section">
+                    <div class="h2-wrapper"><h2>Data</h2></div>
+                    <p><span class="label">Area:</span> 2,040 sq km</p>
+                    <p><span class="label">Population:</span> 1,265,985</p>
+                    <p><span class="label">Capital:</span> Port Louis</p>
+                    <p><span class="label">Languages:</span> English, French, Creole</p>
+                    <p><span class="label">Currency:</span> Mauritian Rupee (MUR)</p>
+                    <p><span class="label">Time Zone:</span> UTC+4 (MUT)</p>
+                    <p><span class="label">Calling Code:</span> +230</p>
+                    <p><span class="label">Internet TLD:</span> .mu</p>
+                </section>
 
-        <div class="content-container">
-            <section class="data-section">
-                <h2>Data</h2>
-                <p><span class="label">Area:</span> 2,040 sq km</p>
-                <p><span class="label">Population:</span> 1,265,985</p>
-                <p><span class="label">Capital:</span> Port Louis</p>
-                <p><span class="label">Languages:</span> English, French, Creole</p>
-                <p><span class="label">Currency:</span> Mauritian Rupee</p>
-                <p><span class="label">Time Zone:</span> UTC+4</p>
-                <p><span class="label">Calling Code:</span> +230</p>
-                <p><span class="label">Internet TLD:</span> .mu</p>
-            </section>
-
-            <section class="weather-section">
-                <h2>Weather</h2>
-                <img src="images/weather-icon.svg" alt="Partly cloudy weather icon" class="weather-icon">
-                <p><span class="label">Temperature:</span> 10 °C</p>
-                <p><span class="label">Conditions:</span> Partly Cloudy</p>
-                <p><span class="label">Wind:</span> 5 km/h</p>
-                <p><span class="label">Wind Chill:</span> <span id="windchill">Loading...</span></p>
-            </section>
+                <section class="weather-section">
+                    <div class="weather-header">
+                        <h2>Weather</h2>
+                        <img src="images/weather-icon.svg" alt="Weather icon" class="weather-icon">
+                    </div>
+                    <div class="weather-content">
+                        <div class="weather-details">
+                            <p><span class="label">Temperature:</span> 25°C</p>
+                            <p><span class="label">Conditions:</span> Mostly Sunny</p>
+                            <p><span class="label">Wind:</span> 8 km/h</p>
+                            <p><span class="label">Wind Chill:</span> <span id="windchill">N/A</span></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     </main>
+    
     <footer>
         <p>&copy;<span id="currentyear"></span> ⚜️ Brighton Dube ⚜️ Mauritius</p>
-        <p><span id="lastModified"></span></p>
+        <p id="lastModified"></p>
     </footer>
 </body>
-
 </html>

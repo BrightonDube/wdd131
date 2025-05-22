@@ -1,12 +1,12 @@
 :root {
-    /* Using the same color scheme as base.css */
-    --primary-color: #2c3e50; /* Dark blue for headers */
-    --secondary-color: #e67e22; /* Warm orange accent */
-    --accent-color: #16a085; /* Green */
-    --text-color: #333; /* Main text color */
-    --light-color: #fff; /* White */
-    --background-color: #f9f9f9; /* Light background */
-    --card-color: #fff; /* White card backgrounds */
+    --primary-color: #2c3e50;
+    --secondary-color: #e67e22;
+    --accent-color: #16a085;
+    --text-color: #333;
+    --light-color: #fff;
+    --background-color: #f9f9f9;
+    --card-color: rgba(255, 255, 255, 0.9);
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 * {
@@ -16,127 +16,195 @@
 }
 
 body {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
     background-color: var(--background-color);
-    color: var(--light-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
-    background-color: var(--secondary-color);
-    padding: 1rem;
-    text-align: center;
-}
-
-footer {
     background-color: var(--primary-color);
+    color: var(--light-color);
     padding: 1rem;
     text-align: center;
+    box-shadow: var(--shadow);
+    position: relative;
+    z-index: 10;
 }
 
 header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+    position: relative;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    overflow: hidden;
 }
 
 .hero img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
-.content-container {
+.overlay-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-content: center;
 }
 
 .data-section, .weather-section {
-    background-color: var(--light-color);
-    border-radius: 5px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: var(--card-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    max-width: 100%;
+    overflow: visible;
+    position: relative;
 }
 
-.data-section h2, .weather-section h2 {
+.data-section {
+    margin-bottom: 1rem;
+}
+
+.weather-section {
+    margin-top: auto;
+    margin-bottom: 2rem;
+}
+
+h2 {
     font-family: 'Playfair Display', serif;
-    color: var(--text-color);
-    margin-bottom: 0.5rem;
+    color: var(--light-color);
+    background-color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
     border-bottom: 2px solid var(--secondary-color);
     padding-bottom: 0.5rem;
+    padding-left: 2rem;
+    display: inline-block;
+    position: relative;
+    left: -2rem;
+    padding-right: 1rem;
 }
 
-.weather-section h2::after {
-    content: "";
-    display: none; /* Hidden in mobile view */
+p {
+    margin: 0.5rem 0;
+    color: var(--text-color);
 }
 
 .label {
     font-weight: bold;
-    margin-right: 0.5rem;
+    color: var(--primary-color);
+    display: inline-block;
+    min-width: 120px;
+}
+
+.weather-content {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 0.5rem;
+}
+
+.weather-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.weather-icon {
+    height: 50px; /* Same height as h2 font-size */
+    width: 50px;
+    margin-left: 0.5rem;
+    /* Force SVG to resize regardless of internal settings */
+    min-height: 0;
+    min-width: 0;
+    object-fit: contain;
+}
+
+.weather-details {
+    flex: 1;
 }
 
 footer {
     background-color: var(--primary-color);
-    color: var(--light-color);
+    color: var(--light-color); /* Force white text for better contrast */
     text-align: center;
     padding: 1rem;
-    margin-top: 1rem;
+    margin-top: auto;
+    position: relative;
+}
+footer p {
+    color: var(--light-color);
 }
 
-/* SVG weather icon for mobile view */
-.weather-section svg {
-    width: 50px;
-    height: 50px;
+footer::before {
+    content: '';
     display: block;
-    margin: 0.5rem 0;
+    height: 4px;
+    background-color: var(--secondary-color);
+    margin-bottom: 1rem;
 }
 
-/* Media query for larger screens */
+/* Large screens */
 @media screen and (min-width: 768px) {
+    .overlay-content {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .data-section {
+        grid-column: 1;
+        grid-row: 1;
+        align-self: start;
+        margin-top: 2rem;
+        max-width: 400px;
+    }
+
+    .weather-section {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        align-self: center;
+        margin-top: 4rem;
+        max-width: 350px;
+        justify-self: end;
+    }
+
     header h1 {
         font-size: 2.5rem;
     }
 
-    .content-container {
-        display: flex;
-        justify-content: space-between;
-        gap: 2rem;
-        padding: 2rem;
-    }
-
-    .data-section, .weather-section {
-        flex: 1;
-        margin-bottom: 0;
-    }
-
-    /* Weather icon for larger screens using pseudo-element */
-    .weather-section h2::after {
-        content: "⛅";
-        display: inline-block;
-        margin-left: 0.5rem;
-        font-size: 1.5rem;
-    }
-
-    /* Hide SVG in larger view */
-    .weather-section svg {
-        display: none;
+    .hero {
+        min-height: 70vh;
     }
 }
 
-/* Orange accent stripe under the header for Mauritius theme */
-header::after {
-    content: "";
-    display: block;
-    height: 10px;
-    background-color: var(--secondary-color);
-}
-
-/* Orange accent stripe above the footer for Mauritius theme */
-footer::before {
-    content: "";
-    display: block;
-    height: 10px;
-    background-color: var(--secondary-color);
+/* Extra large screens */
+@media screen and (min-width: 1200px) {
+    .overlay-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 3rem;
+    }
 }
