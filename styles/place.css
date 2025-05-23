@@ -157,8 +157,7 @@ footer p {
     color: var(--light-color);
 }
 
-footer::before {
-    content: '';
+footer .separator {
     display: block;
     height: 4px;
     background-color: var(--secondary-color);
@@ -207,4 +206,9 @@ footer::before {
         margin: 0 auto;
         padding: 3rem;
     }
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
 }

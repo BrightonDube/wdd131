@@ -181,3 +181,10 @@ footer a {
     width: 100%;
   }
 }
+
+/* Fixed width profile images */
+.profile-img {
+  width: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
