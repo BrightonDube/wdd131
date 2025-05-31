@@ -392,6 +392,18 @@ function highlightActiveFilter(activeLink) {
   activeLink.classList.add('active');
 }
 
+// Function to update the footer copyright year and last modified date
+function updateFooter() {
+  // Get the current year for copyright
+  const currentYear = new Date().getFullYear();
+  document.getElementById('year').textContent = currentYear;
+  
+  // Get the last modified date of the document
+  const lastModified = new Date(document.lastModified);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  document.getElementById('lastModified').textContent = lastModified.toLocaleDateString('en-US', options);
+}
+
 // Initialize when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   // Display all temples initially
@@ -402,4 +414,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Highlight 'Home' link by default
   highlightActiveFilter(document.getElementById('all-filter'));
+  
+  // Update footer information
+  updateFooter();
 });
