@@ -71,18 +71,21 @@ header {
   margin: 1rem 0;
 }
 
-.nav a {
+.nav ul li a {
   color: var(--white);
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 600;
   padding: 0.5rem;
   display: block;
+  transition: background-color 0.3s;
 }
 
-.nav a:hover {
-  background-color: var(--robin-egg-blue);
-  color: var(--onyx);
+.nav ul li a:hover,
+.nav ul li a.active {
+  background-color: var(--purple);
+  border-radius: 5px;
+  color: var(--white);
 }
 
 main {
@@ -94,11 +97,12 @@ main {
   text-align: center;
   max-width: 960px;
 }
+
 section {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
 
 figure {
   margin: 1rem 0;
@@ -116,6 +120,24 @@ figure img {
   height: auto;
   border-radius: 4px;
   order: 2; /* Place image below the text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Placeholder for images that fail to load */
+.image-placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: var(--purple);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 4px;
+  padding: 1rem;
+  order: 2; /* Match the image order */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 

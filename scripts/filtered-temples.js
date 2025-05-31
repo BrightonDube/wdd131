@@ -28,13 +28,78 @@ localStorage.setItem('lastModified', new Date().toISOString());
 
 // Temple data array - information about each temple
 const temples = [
+  // Local temple images
   {
-    templeName: "Aba Nigeria",
-    location: "Aba, Nigeria",
-    dedicated: "2005, August, 7",
+    templeName: "Salt Lake",
+    location: "Salt Lake City, Utah, United States",
+    dedicated: "1893, April, 6",
+    area: 253015,
+    imageUrl: "images/salt-lake-temple.webp"
+  },
+  {
+    templeName: "Los Angeles",
+    location: "Los Angeles, California, United States",
+    dedicated: "1956, March, 11",
+    area: 190614,
+    imageUrl: "images/los-angeles-temple.webp"
+  },
+  {
+    templeName: "Ogden Utah",
+    location: "Ogden, Utah, United States",
+    dedicated: "2014, September, 21",
+    area: 112232,
+    imageUrl: "images/ogden-utah-temple.webp"
+  },
+  {
+    templeName: "Seattle",
+    location: "Bellevue, Washington, United States",
+    dedicated: "1980, November, 17",
+    area: 110000,
+    imageUrl: "images/seattle-temple.webp"
+  },
+  {
+    templeName: "Draper Utah",
+    location: "Draper, Utah, United States",
+    dedicated: "2009, March, 20",
+    area: 58300,
+    imageUrl: "images/draper-temple.webp"
+  },
+  {
+    templeName: "Albuquerque New Mexico",
+    location: "Albuquerque, New Mexico, United States",
+    dedicated: "2000, March, 5",
+    area: 34245,
+    imageUrl: "images/albuquerque-temple.webp"
+  },
+  {
+    templeName: "Dallas Texas",
+    location: "Dallas, Texas, United States",
+    dedicated: "1984, October, 19",
+    area: 44207,
+    imageUrl: "images/dallas-temple.webp"
+  },
+  {
+    templeName: "Fort Collins Colorado",
+    location: "Fort Collins, Colorado, United States",
+    dedicated: "2016, October, 16",
+    area: 42000,
+    imageUrl: "images/fort-collins-temple.webp"
+  },
+  {
+    templeName: "Indianapolis Indiana",
+    location: "Carmel, Indiana, United States",
+    dedicated: "2015, August, 23",
+    area: 34000,
+    imageUrl: "images/indianapolis-temple.webp"
+  },
+  
+  // Online temple images for those without local images
+  {
+    templeName: 'Aba Nigeria',
+    location: 'Aba, Nigeria',
+    dedicated: '2005, August, 7',
     area: 11500,
-    imageUrl:
-    "https://assets.ldscdn.org/c9/01/c901e02b2b083c8bfe76b41e1f92526ec0da36f9/aba_nigeria_temple_lds.jpeg"
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Aba_Nigeria_Temple.jpg'
   },
   {
     templeName: "Manti Utah",
@@ -174,15 +239,47 @@ const temples = [
   }
 ];
 
-// Function to create and display temple cards
-function displayTemples() {
+// Function to parse dedication year from temple's dedicated string
+function getDedicationYear(dedicatedStr) {
+  // Format is like: '1888, May, 21' - we need to extract the year (first part)
+  return parseInt(dedicatedStr.split(',')[0]);
+}
+
+// Filter functions
+function filterOldTemples(temple) {
+  return getDedicationYear(temple.dedicated) < 1900;
+}
+
+function filterNewTemples(temple) {
+  return getDedicationYear(temple.dedicated) > 2000;
+}
+
+function filterLargeTemples(temple) {
+  return temple.area > 90000;
+}
+
+function filterSmallTemples(temple) {
+  return temple.area < 10000;
+}
+
+// Function to create and display temple cards with optional filter
+function displayTemples(filter = null) {
   const templeCardsContainer = document.getElementById('templeCards');
   
   // Clear any existing content
   templeCardsContainer.innerHTML = '';
   
-  // Loop through temple data and create elements
-  temples.forEach(temple => {
+  // Apply filter if provided, otherwise use all temples
+  const filteredTemples = filter ? temples.filter(filter) : temples;
+  
+  // Update heading to show the number of temples displayed
+  const heading = document.querySelector('h2');
+  if (heading) {
+    heading.textContent = `Featured Temples (${filteredTemples.length})`;
+  }
+  
+  // Loop through filtered temple data and create elements
+  filteredTemples.forEach(temple => {
     // Create figure element
     const figure = document.createElement('figure');
     
@@ -191,6 +288,22 @@ function displayTemples() {
     img.src = temple.imageUrl;
     img.alt = temple.templeName;
     img.loading = 'lazy'; // Add native lazy loading
+    
+    // Add error handling for images that fail to load
+    img.onerror = function() {
+      // If the image URL is external (not local) and fails to load
+      if (!temple.imageUrl.startsWith('images/')) {
+        // Set a default placeholder image from your local images folder
+        this.src = 'images/temple-placeholder.webp';
+        // If no placeholder exists, create a colored div with temple name
+        this.onerror = function() {
+          const placeholder = document.createElement('div');
+          placeholder.className = 'image-placeholder';
+          placeholder.textContent = temple.templeName;
+          this.parentNode.replaceChild(placeholder, this);
+        };
+      }
+    };
     
     // Create figcaption for temple name
     const nameCaption = document.createElement('h3');
@@ -248,5 +361,62 @@ function displayTemples() {
   });
 }
 
-// Call the function to display temples when the page loads
-document.addEventListener('DOMContentLoaded', displayTemples);
+// Set up event listeners for filter links
+function setupFilterListeners() {
+  // All temples (Home)
+  document.getElementById('all-filter').addEventListener('click', function(e) {
+    e.preventDefault();
+    displayTemples(); // No filter = all temples
+    highlightActiveFilter(this);
+  });
+  
+  // Old temples (before 1900)
+  document.getElementById('old-filter').addEventListener('click', function(e) {
+    e.preventDefault();
+    displayTemples(filterOldTemples);
+    highlightActiveFilter(this);
+  });
+  
+  // New temples (after 2000)
+  document.getElementById('new-filter').addEventListener('click', function(e) {
+    e.preventDefault();
+    displayTemples(filterNewTemples);
+    highlightActiveFilter(this);
+  });
+  
+  // Large temples (> 90,000 sq ft)
+  document.getElementById('large-filter').addEventListener('click', function(e) {
+    e.preventDefault();
+    displayTemples(filterLargeTemples);
+    highlightActiveFilter(this);
+  });
+  
+  // Small temples (< 10,000 sq ft)
+  document.getElementById('small-filter').addEventListener('click', function(e) {
+    e.preventDefault();
+    displayTemples(filterSmallTemples);
+    highlightActiveFilter(this);
+  });
+}
+
+// Function to highlight the active filter link
+function highlightActiveFilter(activeLink) {
+  // Remove active class from all links
+  const links = document.querySelectorAll('.nav a');
+  links.forEach(link => link.classList.remove('active'));
+  
+  // Add active class to clicked link
+  activeLink.classList.add('active');
+}
+
+// Initialize when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Display all temples initially
+  displayTemples();
+  
+  // Set up filter event listeners
+  setupFilterListeners();
+  
+  // Highlight 'Home' link by default
+  highlightActiveFilter(document.getElementById('all-filter'));
+});
