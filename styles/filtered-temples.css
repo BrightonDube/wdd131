@@ -1,0 +1,140 @@
+:root {
+  --hookers-green: #397367;
+  --robin-egg-blue: #63ccca;
+  --keppel: #5da399;
+  --dark-cyan: #42858c;
+  --onyx: #35393c;
+  --white: #ffffff;
+  --heading-font: 'Lato', sans-serif;
+  --body-font: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--body-font);
+  background-color: var(--white);
+}
+
+header {
+  background-color: var(--onyx);
+  padding: 1rem;
+  position: relative;
+}
+
+.logo {
+  font-family: var(--heading-font);
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.hamburger {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  content: '☰';
+}
+
+.hamburger.active {
+  content: '✕';
+}
+
+.nav {
+  display: none;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.nav.active {
+  display: block;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav li {
+  margin: 1rem 0;
+}
+
+.nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  display: block;
+}
+
+.nav a:hover {
+  background-color: var(--robin-egg-blue);
+  color: var(--onyx);
+}
+
+main {
+  background-color: var(--white);
+  padding: 2rem;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 960px;
+}
+section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+figure {
+  margin: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+figcaption {
+  font-family: var(--body-font);
+  text-align: center;
+  padding: 0.5rem;
+  color: var(--onyx);
+  font-weight: 500;
+}
+
+h1 {
+  font-family: var(--heading-font);
+  color: var(--onyx);
+  margin-bottom: 2rem;
+}
+
+footer {
+  background-color: var(--onyx);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0.5rem 0;
+}
