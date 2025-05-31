@@ -1,0 +1,35 @@
+@media screen and (min-width: 648px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .nav {
+    display: block;
+    width: auto;
+    margin-top: 0;
+  }
+
+  .nav ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav li {
+    margin: 0;
+  }
+  section {    
+    grid-template-columns: 1fr 1fr;    
+  }
+}
+@media screen and (min-width: 992px) {
+  section {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
