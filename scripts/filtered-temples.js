@@ -27,71 +27,7 @@ document.getElementById('lastModified').textContent = formattedDate;
 localStorage.setItem('lastModified', new Date().toISOString());
 
 // Temple data array - information about each temple
-const temples = [
-  // Local temple images
-  {
-    templeName: "Salt Lake",
-    location: "Salt Lake City, Utah, United States",
-    dedicated: "1893, April, 6",
-    area: 253015,
-    imageUrl: "images/salt-lake-temple.webp"
-  },
-  {
-    templeName: "Los Angeles",
-    location: "Los Angeles, California, United States",
-    dedicated: "1956, March, 11",
-    area: 190614,
-    imageUrl: "images/los-angeles-temple.webp"
-  },
-  {
-    templeName: "Ogden Utah",
-    location: "Ogden, Utah, United States",
-    dedicated: "2014, September, 21",
-    area: 112232,
-    imageUrl: "images/ogden-utah-temple.webp"
-  },
-  {
-    templeName: "Seattle",
-    location: "Bellevue, Washington, United States",
-    dedicated: "1980, November, 17",
-    area: 110000,
-    imageUrl: "images/seattle-temple.webp"
-  },
-  {
-    templeName: "Draper Utah",
-    location: "Draper, Utah, United States",
-    dedicated: "2009, March, 20",
-    area: 58300,
-    imageUrl: "images/draper-temple.webp"
-  },
-  {
-    templeName: "Albuquerque New Mexico",
-    location: "Albuquerque, New Mexico, United States",
-    dedicated: "2000, March, 5",
-    area: 34245,
-    imageUrl: "images/albuquerque-temple.webp"
-  },
-  {
-    templeName: "Dallas Texas",
-    location: "Dallas, Texas, United States",
-    dedicated: "1984, October, 19",
-    area: 44207,
-    imageUrl: "images/dallas-temple.webp"
-  },
-  {
-    templeName: "Fort Collins Colorado",
-    location: "Fort Collins, Colorado, United States",
-    dedicated: "2016, October, 16",
-    area: 42000,
-    imageUrl: "images/fort-collins-temple.webp"
-  },
-  {
-    templeName: "Indianapolis Indiana",
-    location: "Carmel, Indiana, United States",
-    dedicated: "2015, August, 23",
-    area: 34000,
-    imageUrl: "images/indianapolis-temple.webp"
-  },
+const temples = [ 
 
   {
     templeName: 'Aba Nigeria',
@@ -143,82 +79,55 @@ const temples = [
     imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
   {
+    templeName: "Dallas Texas",
+    location: "Dallas, Texas, United States",
+    dedicated: "1984, October, 19",
+    area: 44207,
+    imageUrl: "images/dallas-temple.webp"
+  },
+  {
+    templeName: "Fort Collins Colorado",
+    location: "Fort Collins, Colorado, United States",
+    dedicated: "2016, October, 16",
+    area: 42000,
+    imageUrl: "images/fort-collins-temple.webp"
+  },
+  {
+    templeName: "Indianapolis Indiana",
+    location: "Carmel, Indiana, United States",
+    dedicated: "2015, August, 23",
+    area: 34000,
+    imageUrl: "images/indianapolis-temple.webp"
+  },
+  {
     templeName: "Bern Switzerland",
     location: "Bern, Switzerland",
     dedicated: "1955, September, 11",
     area: 18500,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/bern-switzerland-temple/bern-switzerland-temple-1249.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/bern-switzerland-temple/bern-switzerland-temple-54641-main.jpg"
   },
   {
     templeName: "Tokyo Japan",
     location: "Tokyo, Japan",
     dedicated: "1980, October, 27",
     area: 52590,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/tokyo-japan-temple/tokyo-japan-temple.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/tokyo-japan-temple/tokyo-japan-temple-26340-main.jpg"
   },
   {
     templeName: "Johannesburg South Africa",
     location: "Johannesburg, South Africa",
     dedicated: "1985, August, 24",
     area: 14500,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/johannesburg-south-africa-temple/johannesburg-south-africa-temple-767.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/johannesburg-south-africa-temple/johannesburg-south-africa-temple-22475-main.jpg"
   },
   {
     templeName: "Nauvoo Illinois",
     location: "Nauvoo, Illinois, United States",
     dedicated: "2002, June, 27",
     area: 54000,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/nauvoo-illinois-temple/nauvoo-illinois-temple-844.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/nauvoo-illinois-temple/nauvoo-illinois-temple-50576-main.jpg"
   },
-  {
-    templeName: "Rome Italy",
-    location: "Rome, Italy",
-    dedicated: "2019, March, 10",
-    area: 41000,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/rome-italy-temple/rome-italy-temple-960.jpg"
-  },
-  {
-    templeName: "Kyiv Ukraine",
-    location: "Kyiv, Ukraine",
-    dedicated: "2010, August, 29",
-    area: 22000,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/kyiv-ukraine-temple/kyiv-ukraine-temple-772.jpg"
-  },
-  {
-    templeName: "San Diego California",
-    location: "San Diego, California, United States",
-    dedicated: "1993, April, 25",
-    area: 72000,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/san-diego-california-temple/san-diego-california-temple-827.jpg"
-  },
-  {
-    templeName: "Sydney Australia",
-    location: "Sydney, Australia",
-    dedicated: "1984, September, 20",
-    area: 30658,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/6/6c/Sydney_Australia_Temple_1.jpg"
-  },
-  {
-    templeName: "Accra Ghana",
-    location: "Accra, Ghana",
-    dedicated: "2004, January, 11",
-    area: 17500,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/6/61/Accra_Ghana_Temple.jpg"
-  },
-  {
-    templeName: "Paris France",
-    location: "Le Chesnay, France",
-    dedicated: "2017, May, 21",
-    area: 44175,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/paris-france-temple/paris-france-temple-754.jpg"
-  },
-  {
-    templeName: "Cebu City Philippines",
-    location: "Cebu City, Philippines",
-    dedicated: "2010, June, 13",
-    area: 29556,
-    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/cebu-city-philippines-temple/cebu-city-philippines-temple-798.jpg"
-  }
+  
 ];
 
 // Function to parse dedication year from temple's dedicated string
