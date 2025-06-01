@@ -92,105 +92,104 @@ const temples = [
     area: 34000,
     imageUrl: "images/indianapolis-temple.webp"
   },
-  
-  // Online temple images for those without local images
+
   {
     templeName: 'Aba Nigeria',
     location: 'Aba, Nigeria',
     dedicated: '2005, August, 7',
     area: 11500,
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/e/e5/Aba_Nigeria_Temple.jpg'
+    imageUrl: 'https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg'
   },
   {
     templeName: "Manti Utah",
-    location: "Manti, Utah, USA",
+    location: "Manti, Utah, United States",
     dedicated: "1888, May, 21",
-    area: 100373,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Manti_Temple_%28Manti%2C_Utah%2C_USA%29.jpg/800px-Manti_Temple_%28Manti%2C_Utah%2C_USA%29.jpg"
+    area: 74792,
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/manti-utah/400x250/manti-temple-768192-wallpaper.jpg"
   },
   {
     templeName: "Payson Utah",
     location: "Payson, Utah, United States",
     dedicated: "2015, June, 7",
     area: 96630,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Payson_Utah_Temple.jpg"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
   },
   {
     templeName: "Yigo Guam",
     location: "Yigo, Guam",
     dedicated: "2020, May, 2",
     area: 6861,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Yigo_Guam_Temple.jpg/800px-Yigo_Guam_Temple.jpg"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg"
   },
   {
     templeName: "Washington D.C.",
     location: "Kensington, Maryland, United States",
     dedicated: "1974, November, 19",
-    area: 160000,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Washington_D.C._Temple_original.jpg"
+    area: 156558,
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
   },
   {
     templeName: "Lima Perú",
-    location: "Lima, Peru",
+    location: "Lima, Perú",
     dedicated: "1986, January, 10",
     area: 9600,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Lima_Peru_Temple.jpg"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg"
   },
   {
     templeName: "Mexico City Mexico",
     location: "Mexico City, Mexico",
     dedicated: "1983, December, 2",
     area: 116642,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Mexico_City_Temple_Exterior.jpg"
+    imageUrl: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
   {
     templeName: "Bern Switzerland",
     location: "Bern, Switzerland",
     dedicated: "1955, September, 11",
     area: 18500,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/e/eb/Switzerland_Temple.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/bern-switzerland-temple/bern-switzerland-temple-1249.jpg"
   },
   {
     templeName: "Tokyo Japan",
     location: "Tokyo, Japan",
     dedicated: "1980, October, 27",
     area: 52590,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Tokyo-temple-lds.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/tokyo-japan-temple/tokyo-japan-temple.jpg"
   },
   {
     templeName: "Johannesburg South Africa",
     location: "Johannesburg, South Africa",
     dedicated: "1985, August, 24",
     area: 14500,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Johannesburg_Temple.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/johannesburg-south-africa-temple/johannesburg-south-africa-temple-767.jpg"
   },
   {
     templeName: "Nauvoo Illinois",
     location: "Nauvoo, Illinois, United States",
     dedicated: "2002, June, 27",
     area: 54000,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/e/ec/Nauvoo_Temple.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/nauvoo-illinois-temple/nauvoo-illinois-temple-844.jpg"
   },
   {
     templeName: "Rome Italy",
     location: "Rome, Italy",
     dedicated: "2019, March, 10",
     area: 41000,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Temple_Rome_Italy.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/rome-italy-temple/rome-italy-temple-960.jpg"
   },
   {
     templeName: "Kyiv Ukraine",
     location: "Kyiv, Ukraine",
     dedicated: "2010, August, 29",
     area: 22000,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/9/95/Kiev_Ukraine_Temple.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/kyiv-ukraine-temple/kyiv-ukraine-temple-772.jpg"
   },
   {
     templeName: "San Diego California",
     location: "San Diego, California, United States",
     dedicated: "1993, April, 25",
     area: 72000,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/8/87/San_Diego_California_Temple8.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/san-diego-california-temple/san-diego-california-temple-827.jpg"
   },
   {
     templeName: "Sydney Australia",
@@ -211,14 +210,14 @@ const temples = [
     location: "Le Chesnay, France",
     dedicated: "2017, May, 21",
     area: 44175,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/0/0e/Temple_Paris_France.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/paris-france-temple/paris-france-temple-754.jpg"
   },
   {
     templeName: "Cebu City Philippines",
     location: "Cebu City, Philippines",
     dedicated: "2010, June, 13",
     area: 29556,
-    imageUrl: "https://upload.wikimedia.org/wikipedia/commons/d/df/Cebu_City_Philippines_Temple.jpg"
+    imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/cebu-city-philippines-temple/cebu-city-philippines-temple-798.jpg"
   }
 ];
 
