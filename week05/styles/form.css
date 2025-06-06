@@ -1,19 +1,19 @@
 :root {
-    /* Color Palette - Blue Spectrum with Accessibility in Mind */
-    --primary: #1a5f9c;       /* Primary blue - good contrast on white */
-    --primary-dark: #0d4b80;  /* Darker shade for hover states */
-    --primary-light: #e6f0f9; /* Light background for contrast */
-    --secondary: #2c8bd1;     /* Accent blue */
-    --text: #2c3e50;         /* Dark blue-gray for text */
-    --text-light: #5d6d7e;   /* Lighter text for less important info */
-    --background: #f8f9fa;    /* Off-white background */
+    /* High Contrast Color Palette */
+    --primary: #003366;       /* Dark blue for primary elements */
+    --primary-dark: #002244;  /* Darker blue for hover states */
+    --primary-light: #e6f0fa; /* Very light blue for backgrounds */
+    --secondary: #004080;     /* Slightly lighter blue for accents */
+    --text: #000000;         /* Pure black for main text */
+    --text-light: #333333;   /* Very dark gray for secondary text */
+    --background: #ffffff;    /* Pure white background */
     --white: #ffffff;
-    --gray-light: #e9ecef;
-    --gray: #adb5bd;
-    --success: #28a745;
-    --error: #dc3545;
+    --gray-light: #666666;   /* Dark gray for borders */
+    --gray: #444444;         /* Very dark gray for disabled elements */
+    --success: #006400;      /* Dark green for success messages */
+    --error: #8b0000;        /* Dark red for error messages */
     --border-radius: 6px;
-    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Base Styles */
@@ -27,10 +27,12 @@ body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: var(--text);
-    background-color: var(--background);
+    background-color: var(--white);
     padding: 20px;
     max-width: 1200px;
     margin: 0 auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, legend {
@@ -95,11 +97,42 @@ select,
 textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid var(--gray);
+    border: 2px solid var(--gray);
     border-radius: var(--border-radius);
     font-size: 1rem;
     transition: border-color 0.3s ease;
     background-color: var(--white);
+    color: var(--text);
+    font-weight: 500;
+}
+
+/* Placeholder text with better contrast */
+::placeholder {
+    color: #444444;
+    opacity: 1; /* Firefox */
+}
+
+/* Ensure all input placeholders have good contrast */
+input::placeholder,
+textarea::placeholder {
+    color: #444444;
+    font-weight: 400;
+}
+
+/* Focus state for placeholders */
+input:focus::placeholder,
+textarea:focus::placeholder {
+    color: #666666;
+}
+
+/* Focus states for better keyboard navigation */
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--primary);
+    outline: 3px solid rgba(12, 75, 142, 0.3);
+    outline-offset: 1px;
 }
 
 input[type="text"]:focus,
@@ -116,51 +149,50 @@ textarea {
     min-height: 120px;
 }
 
-/* Rating Stars */
+/* High Contrast Star Rating */
 .rating {
     display: flex;
     flex-direction: row-reverse;
     justify-content: flex-end;
     margin: 0.5rem 0;
+    position: relative;
 }
 
 .rating input {
     display: none;
 }
 
-.rating {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    margin: 0.5rem 0;
-    position: relative;
-}
-
 .rating label {
     font-size: 2rem;
-    color: #e0e0e0; /* Lighter gray for better contrast */
+    color: #003366; /* Blue for unselected stars */
     cursor: pointer;
     padding: 0 0.2rem;
-    margin: 0;
+    margin: 0 2px;
     position: relative;
-    -webkit-text-stroke: 1.5px #666; /* Darker outline for contrast */
-    text-stroke: 1.5px #666;
-    transition: all 0.2s ease;
+    text-shadow: 0 0 1px #333;
+    -webkit-text-stroke: 1px #333;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    transform: scale(1);
 }
 
-/* Selected stars */
+/* Selected stars - larger and bolder */
 .rating > input:checked ~ label {
-    color: #ffc107; /* Gold color for selected stars */
-    -webkit-text-stroke: 1.5px #8b6a00; /* Darker gold outline for contrast */
-    text-stroke: 1.5px #8b6a00;
+    color: #000000; /* Pure black for selected stars */
+    text-shadow: none;
+    -webkit-text-stroke: 2px #000000;
+    font-weight: 900;
+    transform: scale(1.5); /* 50% larger than unselected */
+    margin: 0 8px; /* Add more horizontal space for larger stars */
+    z-index: 1; /* Ensure larger stars appear above smaller ones */
 }
 
 /* Hover states */
 .rating:not(:checked) > label:hover,
 .rating:not(:checked) > label:hover ~ label {
-    color: #ffdb6a; /* Lighter gold for hover */
-    -webkit-text-stroke: 1.5px #8b6a00;
-    text-stroke: 1.5px #8b6a00;
+    color: #333333; /* Dark gray for hover */
+    text-shadow: none;
+    -webkit-text-stroke: 1.5px #333333;
 }
 
 /* Hover states for checked items */
@@ -168,23 +200,33 @@ textarea {
 .rating > input:checked ~ label:hover,
 .rating > label:hover ~ input:checked ~ label,
 .rating > input:checked ~ label:hover ~ label {
-    color: #ffea9e; /* Even lighter gold for hover on selected */
-    -webkit-text-stroke: 1.5px #8b6a00;
-    text-stroke: 1.5px #8b6a00;
+    color: #000000;
+    text-shadow: none;
+    -webkit-text-stroke: 2px #000000;
 }
 
 /* Focus styles for accessibility */
 .rating input:focus-visible + label {
-    outline: 2px solid var(--primary);
+    outline: 3px solid var(--primary);
     outline-offset: 2px;
     border-radius: 2px;
 }
 
-/* Checkbox Styling */
+/* Checkbox Styling with Better Contrast */
 .checkbox-group {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    user-select: none;
+    color: var(--text);
 }
 
 .checkbox-container {
@@ -276,14 +318,40 @@ textarea {
     margin-top: 2rem;
 }
 
+/* Button styles with better contrast */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+}
+
 /* Footer */
 footer {
     text-align: center;
+    margin-top: 3rem;
     padding: 1.5rem 0;
-    margin-top: 2rem;
-    border-top: 1px solid var(--gray-light);
-    color: var(--text-light);
+    border-top: 2px solid var(--gray);
+    color: var(--text);
     font-size: 0.9rem;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
 }
 
 /* Responsive Design */
@@ -334,10 +402,15 @@ input[type="radio"]:required:valid + label:before {
 }
 
 .error-message {
-    color: var(--error);
+    color: #ffffff; /* White text for better contrast */
+    background-color: #8b0000; /* Dark red background */
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
     font-size: 0.875rem;
-    margin-top: 0.25rem;
+    margin: 0.5rem 0;
     display: none;
+    border-left: 4px solid #660000;
+    font-weight: 500;
 }
 
 input:invalid + .error-message {
