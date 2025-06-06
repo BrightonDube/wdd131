@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for your review - Product Review Form">
+    <meta name="author" content="Brighton Dube">
+    <title>Thank You | Product Review</title>
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .confirmation {
+            text-align: center;
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .confirmation h1 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .confirmation p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+        .review-count {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: var(--primary-light);
+            border-radius: 4px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation">
+        <h1>Thank You for Your Review!</h1>
+        <p>We appreciate you taking the time to share your experience with us. Your feedback is valuable in helping us improve our products and services.</p>
+        <p>Your review has been successfully submitted and is currently being processed.</p>
+        
+        <div class="review-count">
+            Total Reviews Submitted: <span id="totalReviews">0</span>
+        </div>
+        
+        <a href="form.html" class="btn">Submit Another Review</a>
+    </div>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> | Brighton Dube | South Africa</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script>
+        // Update review count
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get review count from URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const product = urlParams.get('product');
+            const rating = urlParams.get('rating');
+            
+            // Update current year and last modified
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+            
+            // Get and display review count
+            let reviewCount = localStorage.getItem('reviewCount') || 0;
+            document.getElementById('totalReviews').textContent = reviewCount;
+            
+            // Log the form data to console (for demonstration)
+            console.log('Form submitted with:', {
+                product: product,
+                rating: rating,
+                installDate: urlParams.get('installDate'),
+                features: urlParams.getAll('features'),
+                review: urlParams.get('review')
+            });
+        });
+    </script>
+</body>
+</html>
