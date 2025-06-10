@@ -1,0 +1,205 @@
+[
+  {
+    "id": 1,
+    "name": "Classic Spaghetti Bolognese",
+    "category": "Dinner",
+    "image": "images/recipe1.jpg",
+    "ingredients": [
+      "200g spaghetti",
+      "100g ground beef",
+      "1 cup tomato sauce",
+      "1/2 onion, diced",
+      "1 clove garlic, minced",
+      "1 tbsp olive oil",
+      "Salt & pepper"
+    ],
+    "steps": [
+      "Cook spaghetti according to package instructions.",
+      "Heat oil, sauté onion and garlic.",
+      "Add ground beef, cook until browned.",
+      "Pour in tomato sauce, simmer 10 min.",
+      "Combine with spaghetti and serve."
+    ],
+    "tags": ["beef", "italian"]
+  },
+  {
+    "id": 2,
+    "name": "Vegetarian Stir Fry",
+    "category": "Lunch",
+    "image": "images/recipe2.jpg",
+    "ingredients": [
+      "1 cup broccoli florets",
+      "1 bell pepper, sliced",
+      "1 carrot, julienned",
+      "2 tbsp soy sauce",
+      "1 tbsp sesame oil",
+      "1 tsp ginger, grated"
+    ],
+    "steps": [
+      "Heat oil in wok.",
+      "Add veggies, stir fry 5 min.",
+      "Add soy sauce and ginger.",
+      "Serve hot over rice."
+    ],
+    "tags": ["vegetarian", "asian"]
+  },
+  {
+    "id": 3,
+    "name": "Chicken Caesar Salad",
+    "category": "Lunch",
+    "image": "images/recipe3.jpg",
+    "ingredients": [
+      "2 cups romaine lettuce",
+      "1 grilled chicken breast, sliced",
+      "1/4 cup parmesan",
+      "Croutons",
+      "Caesar dressing"
+    ],
+    "steps": [
+      "Chop lettuce, add to bowl.",
+      "Add sliced chicken, parmesan, croutons.",
+      "Drizzle with dressing and toss."
+    ],
+    "tags": ["chicken", "salad"]
+  },
+  {
+    "id": 4,
+    "name": "Banana Pancakes",
+    "category": "Breakfast",
+    "image": "images/recipe4.jpg",
+    "ingredients": [
+      "1 banana, mashed",
+      "2 eggs",
+      "1/2 cup flour",
+      "1/4 cup milk",
+      "1 tsp baking powder",
+      "Maple syrup"
+    ],
+    "steps": [
+      "Mix banana, eggs, milk.",
+      "Add flour and baking powder.",
+      "Cook pancakes on griddle.",
+      "Serve with maple syrup."
+    ],
+    "tags": ["breakfast", "vegetarian"]
+  },
+  {
+    "id": 5,
+    "name": "Beef Tacos",
+    "category": "Dinner",
+    "image": "images/recipe5.jpg",
+    "ingredients": [
+      "6 taco shells",
+      "200g ground beef",
+      "1/2 cup shredded lettuce",
+      "1/2 cup diced tomato",
+      "1/4 cup cheddar cheese",
+      "Taco seasoning"
+    ],
+    "steps": [
+      "Cook beef with seasoning.",
+      "Fill shells with beef, lettuce, tomato, cheese."
+    ],
+    "tags": ["beef", "mexican"]
+  },
+  {
+    "id": 6,
+    "name": "Vegan Buddha Bowl",
+    "category": "Dinner",
+    "image": "images/recipe6.jpg",
+    "ingredients": [
+      "1/2 cup quinoa",
+      "1/2 cup chickpeas",
+      "1/2 avocado, sliced",
+      "1/2 cup roasted sweet potato",
+      "Spinach leaves",
+      "Tahini sauce"
+    ],
+    "steps": [
+      "Cook quinoa as directed.",
+      "Arrange all ingredients in a bowl.",
+      "Drizzle with tahini sauce."
+    ],
+    "tags": ["vegan", "healthy"]
+  },
+  {
+    "id": 7,
+    "name": "Gluten-Free Blueberry Muffins",
+    "category": "Breakfast",
+    "image": "images/recipe7.jpg",
+    "ingredients": [
+      "1 cup gluten-free flour",
+      "1/2 cup sugar",
+      "1 egg",
+      "1/2 cup milk",
+      "1/2 cup blueberries",
+      "1 tsp baking powder"
+    ],
+    "steps": [
+      "Mix dry ingredients.",
+      "Add egg, milk, mix well.",
+      "Fold in blueberries.",
+      "Bake at 180°C for 20 min."
+    ],
+    "tags": ["gluten-free", "dessert"]
+  },
+  {
+    "id": 8,
+    "name": "Shrimp Fried Rice",
+    "category": "Dinner",
+    "image": "images/recipe8.jpg",
+    "ingredients": [
+      "1 cup cooked rice",
+      "100g shrimp, peeled",
+      "1/4 cup peas",
+      "1 egg, beaten",
+      "2 tbsp soy sauce",
+      "1 tbsp oil"
+    ],
+    "steps": [
+      "Heat oil, cook shrimp.",
+      "Add peas, rice, stir-fry.",
+      "Push aside, scramble egg, mix all.",
+      "Add soy sauce, stir well."
+    ],
+    "tags": ["seafood", "asian"]
+  },
+  {
+    "id": 9,
+    "name": "Caprese Salad",
+    "category": "Lunch",
+    "image": "images/recipe9.jpg",
+    "ingredients": [
+      "2 tomatoes, sliced",
+      "100g mozzarella",
+      "Fresh basil leaves",
+      "2 tbsp olive oil",
+      "Salt & pepper"
+    ],
+    "steps": [
+      "Arrange tomato and mozzarella slices.",
+      "Add basil, drizzle oil, season."
+    ],
+    "tags": ["vegetarian", "italian"]
+  },
+  {
+    "id": 10,
+    "name": "Chocolate Chip Cookies",
+    "category": "Dessert",
+    "image": "images/recipe10.jpg",
+    "ingredients": [
+      "1 cup flour",
+      "1/2 cup sugar",
+      "1/2 cup butter",
+      "1 egg",
+      "1/2 cup chocolate chips",
+      "1 tsp vanilla extract"
+    ],
+    "steps": [
+      "Mix butter, sugar, egg, vanilla.",
+      "Add flour, mix, fold in chips.",
+      "Scoop onto tray, bake 12 min at 180°C."
+    ],
+    "tags": ["dessert", "snack"]
+  }
+]
