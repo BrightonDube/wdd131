@@ -1,0 +1,94 @@
+/* RecipeMaster Main Stylesheet */
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: #f5f5f5;
+    color: #212121;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #1B5E20;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+nav .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: #E65100;
+}
+
+main {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.hero {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    text-align: center;
+}
+
+.featured-recipes, .quick-planner, .recipe-search, .meal-planner, .about, .references {
+    margin-top: 2.5rem;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+footer {
+    background: #212121;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+@media (max-width: 700px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    main {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+    .hero, .featured-recipes, .quick-planner, .recipe-search, .meal-planner, .about, .references {
+        padding: 1rem;
+    }
+}
