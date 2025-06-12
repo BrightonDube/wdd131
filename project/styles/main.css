@@ -166,6 +166,18 @@ nav .logo {
     top: 9px;
 }
 
+.nav-toggle.open span {
+    background: transparent;
+}
+.nav-toggle.open span:before {
+    transform: rotate(45deg) translate(5px, 5px);
+    top: 0;
+}
+.nav-toggle.open span:after {
+    transform: rotate(-45deg) translate(5px, -5px);
+    top: 0;
+}
+
 nav ul {
     display: flex;
     gap: 1.5rem;
@@ -185,7 +197,7 @@ nav ul {
         position: absolute;
         top: 100%;
         left: 0;
-        right: -100vw;
+        right: 0;
         width: 100vw;
         padding: 1.5rem 1rem;
         gap: 1.2rem;
@@ -194,10 +206,10 @@ nav ul {
         box-shadow: 0 6px 24px rgba(33,33,33,0.13);
         overflow-x: auto;
         max-width: 100vw;
+        display: none;
     }
     nav ul.open {
-        left: 0;
-        right: 0;
+        display: flex;
     }
 }
 
