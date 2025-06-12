@@ -170,7 +170,7 @@ function displayRecipes(recipes) {
   const grid = document.querySelector('.recipe-grid');
   grid.innerHTML = recipes.map(recipe => `
     <div class="recipe-card">
-      <img src="${recipe.image}" alt="${recipe.name}">
+      <img src="${recipe.image}" alt="${recipe.name}" loading="lazy">
       <h3>${recipe.name}</h3>
       <p class="category">${recipe.category}</p>
       <ul class="tags">${recipe.tags.map(tag => `<li>${tag}</li>`).join('')}</ul>
@@ -194,7 +194,7 @@ function showRecipe(id) {
         <div class="modal-overlay"></div>
         <div class="modal-content" role="dialog" aria-modal="true" tabindex="-1">
           <button class="modal-close" aria-label="Close">&times;</button>
-          <img src="${recipe.image}" alt="${recipe.name}" class="modal-img" onerror="this.style.display='none'">
+          <img src="${recipe.image}" alt="${recipe.name}" class="modal-img" loading="lazy" onerror="this.style.display='none'">
           <h2>${recipe.name}</h2>
           <p class="category">${recipe.category || ''}</p>
           <ul class="tags">${(recipe.tags||[]).map(tag => `<li>${tag}</li>`).join('')}</ul>
@@ -228,7 +228,7 @@ function displayFeaturedRecipes(recipes) {
   const featured = recipes.slice(0, 3);
   cards.innerHTML = featured.map(recipe => `
     <div class="recipe-card">
-      <img src="${recipe.image}" alt="${recipe.name}">
+      <img src="${recipe.image}" alt="${recipe.name}" loading="lazy">
       <h3>${recipe.name}</h3>
       <p class="category">${recipe.category}</p>
     </div>
@@ -251,7 +251,7 @@ function showRecipe(id) {
         <div class="modal-overlay"></div>
         <div class="modal-content" role="dialog" aria-modal="true" tabindex="-1">
           <button class="modal-close" aria-label="Close">&times;</button>
-          <img src="${recipe.image}" alt="${recipe.name}" class="modal-img" onerror="this.style.display='none'">
+          <img src="${recipe.image}" alt="${recipe.name}" class="modal-img" loading="lazy" onerror="this.style.display='none'">
           <h2>${recipe.name}</h2>
           <p class="category">${recipe.category || ''}</p>
           <ul class="tags">${(recipe.tags||[]).map(tag => `<li>${tag}</li>`).join('')}</ul>
