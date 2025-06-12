@@ -1,6 +1,35 @@
 // Fetch and display recipes from JSON
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Responsive Nav Toggle
+  const nav = document.querySelector('nav');
+  const navToggle = nav ? nav.querySelector('.nav-toggle') : null;
+  const navUl = nav ? nav.querySelector('ul') : null;
+  if (nav && navToggle && navUl) {
+    navToggle.addEventListener('click', function(e) {
+      navUl.classList.toggle('open');
+      navToggle.classList.toggle('open');
+      const expanded = navUl.classList.contains('open');
+      navToggle.setAttribute('aria-expanded', expanded);
+      e.stopPropagation();
+    });
+    // Close nav when a link is clicked
+    navUl.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function() {
+        navUl.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    // Close nav when clicking outside
+    document.addEventListener('click', function(e) {
+      if (navUl.classList.contains('open') && !navUl.contains(e.target) && !navToggle.contains(e.target)) {
+        navUl.classList.remove('open');
+        navToggle.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
   // On recipes.html
   if (document.querySelector('.recipe-grid')) {
     const searchInput = document.querySelector('.recipe-search input[type="search"]');
