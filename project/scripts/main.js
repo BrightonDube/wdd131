@@ -3,6 +3,18 @@
 document.addEventListener('DOMContentLoaded', () => {
   // On recipes.html
   if (document.querySelector('.recipe-grid')) {
+    const searchInput = document.querySelector('.recipe-search input[type="search"]');
+    if (searchInput) {
+      // Restore last search value
+      const lastSearch = localStorage.getItem('recipeSearch');
+      if (lastSearch) {
+        searchInput.value = lastSearch;
+      }
+      // Save search value on input
+      searchInput.addEventListener('input', () => {
+        localStorage.setItem('recipeSearch', searchInput.value);
+      });
+    }
     fetch('data/recipes.json')
       .then(res => res.json())
       .then(data => displayRecipes(data));

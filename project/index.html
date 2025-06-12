@@ -11,6 +11,9 @@
     <header>
         <nav>
             <a href="index.html" class="logo">RecipeMaster</a>
+            <button class="nav-toggle" aria-label="Open navigation" aria-expanded="false">
+                <span></span>
+            </button>
             <ul>
                 <li><a href="recipes.html">Recipes</a></li>
                 <li><a href="planner.html">Meal Planner</a></li>
@@ -22,7 +25,7 @@
     <main>
         <section class="hero">
             <div class="hero-bg">
-                <img src="images/hero.jpg" alt="Fresh ingredients and cooking" class="hero-image">
+                <img src="https://images.pexels.com/photos/691114/pexels-photo-691114.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Fresh ingredients and cooking" class="hero-image" loading="lazy">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <h1>Welcome to <span class="brand">RecipeMaster</span></h1>
@@ -41,9 +44,35 @@
             <p>Plan your week with ease!</p>
         </section>
     </main>
+    <section id="color-schema">
+        <h2>Color Schema</h2>
+        <div class="color-scheme">
+            <div class="color-box primary-bg">Primary<br>#1B5E20</div>
+            <div class="color-box secondary-bg">Secondary<br>#C62828</div>
+            <div class="color-box accent-bg">Accent<br>#E65100</div>
+        </div>
+        <p><strong>Color Usage:</strong></p>
+        <ul>
+            <li><strong>Forest Green (#1B5E20):</strong> Headers, primary buttons, and key navigation elements (AAA contrast with white text)</li>
+            <li><strong>Brick Red (#C62828):</strong> Secondary buttons, highlights, and important call-to-actions</li>
+            <li><strong>Dark Orange (#E65100):</strong> Accents, badges, and special highlights</li>
+            <li><strong>Dark Gray (#212121):</strong> Main text color with excellent contrast on light backgrounds</li>
+            <li><strong>Light Gray (#f5f5f5):</strong> Background and card colors</li>
+        </ul>
+    </section>
     <footer>
-        <p>&copy; 2025 RecipeMaster. All rights reserved.</p>
+        <p>&copy; 2025 RecipeMaster. All rights reserved. | <a href="siteplan.html">View Site Plan</a></p>
     </footer>
     <script src="scripts/main.js"></script>
+    <script>
+    // Hamburger menu toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navUl = document.querySelector('nav ul');
+    navToggle.addEventListener('click', function() {
+      navUl.classList.toggle('open');
+      const expanded = navUl.classList.contains('open');
+      navToggle.setAttribute('aria-expanded', expanded);
+    });
+    </script>
 </body>
 </html>
