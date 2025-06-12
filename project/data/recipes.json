@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Classic Spaghetti Bolognese",
     "category": "Dinner",
-    "image": "images/bolognaise.jpg",
+    "image": "images/bolognaise.webp",
     "ingredients": [
       "200g spaghetti",
       "100g ground beef",
@@ -26,7 +26,7 @@
     "id": 2,
     "name": "Vegetarian Stir Fry",
     "category": "Lunch",
-    "image": "images/stirfry.jpg",
+    "image": "images/stirfry.webp",
     "ingredients": [
       "1 cup broccoli florets",
       "1 bell pepper, sliced",
@@ -47,7 +47,7 @@
     "id": 3,
     "name": "Chicken Caesar Salad",
     "category": "Lunch",
-    "image": "images/caesar.jpg",
+    "image": "images/caesar.webp",
     "ingredients": [
       "2 cups romaine lettuce",
       "1 grilled chicken breast, sliced",
@@ -66,7 +66,7 @@
     "id": 4,
     "name": "Banana Pancakes",
     "category": "Breakfast",
-    "image": "images/pancakes.jpg",
+    "image": "images/pancakes.webp",
     "ingredients": [
       "1 banana, mashed",
       "2 eggs",
@@ -87,7 +87,7 @@
     "id": 5,
     "name": "Beef Tacos",
     "category": "Dinner",
-    "image": "images/tacos.jpg",
+    "image": "images/tacos.webp",
     "ingredients": [
       "6 taco shells",
       "200g ground beef",
@@ -106,7 +106,7 @@
     "id": 6,
     "name": "Vegan Buddha Bowl",
     "category": "Dinner",
-    "image": "images/buddhabowl.jpg",
+    "image": "images/buddhabowl.webp",
     "ingredients": [
       "1/2 cup quinoa",
       "1/2 cup chickpeas",
@@ -126,7 +126,7 @@
     "id": 7,
     "name": "Gluten-Free Blueberry Muffins",
     "category": "Breakfast",
-    "image": "images/muffins.jpg",
+    "image": "images/muffins.webp",
     "ingredients": [
       "1 cup gluten-free flour",
       "1/2 cup sugar",
@@ -147,7 +147,7 @@
     "id": 8,
     "name": "Shrimp Fried Rice",
     "category": "Dinner",
-    "image": "images/fried-rice.jpg",
+    "image": "images/fried-rice.webp",
     "ingredients": [
       "1 cup cooked rice",
       "100g shrimp, peeled",
@@ -168,7 +168,7 @@
     "id": 9,
     "name": "Caprese Salad",
     "category": "Lunch",
-    "image": "images/caprese-salad.jpg",
+    "image": "images/caprese-salad.webp",
     "ingredients": [
       "2 tomatoes, sliced",
       "100g mozzarella",
@@ -186,7 +186,7 @@
     "id": 10,
     "name": "Chocolate Chip Cookies",
     "category": "Dessert",
-    "image": "images/choco-chip-cookie.jpg",
+    "image": "images/choco-chip-cookie.webp",
     "ingredients": [
       "1 cup flour",
       "1/2 cup sugar",
