@@ -88,7 +88,7 @@ body {
     text-shadow: 0 2px 12px rgba(0,0,0,0.18);
 }
 .hero-content .brand {
-    color: #E65100;
+    color: #4a0e0a;
     font-weight: 900;
     letter-spacing: 2px;
     text-shadow: 0 2px 12px rgba(0,0,0,0.22);
@@ -227,7 +227,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #E65100;
+    color: #4a0e0a;
 }
 
 /* Hero section always visible and with min-height */
@@ -326,7 +326,7 @@ main {
     display: block;
     margin: 2rem auto 0 auto;
     padding: 0.95rem 2.2rem;
-    background: #E65100;
+    background: #4a0e0a;
     color: #fff;
     border: none;
     border-radius: 8px;
@@ -370,7 +370,7 @@ main {
     font-size: 1.04rem;
 }
 .shopping-list .qty {
-    color: #C62828;
+    color: #4a0e0e;
     font-weight: 600;
     margin-left: 0.4rem;
 }
@@ -428,7 +428,7 @@ main {
     background: none;
     border: none;
     font-size: 2rem;
-    color: #C62828;
+    color: #4a0e0e;
     cursor: pointer;
     z-index: 3;
     transition: color 0.18s;
@@ -453,7 +453,7 @@ main {
     text-align: center;
 }
 #recipe-modal .category {
-    color: #E65100;
+    color: #4a0e0a;
     font-size: 1.05rem;
     text-align: center;
     margin-bottom: 0.55rem;
@@ -468,7 +468,7 @@ main {
     justify-content: center;
 }
 #recipe-modal .tags li {
-    background: #C62828;
+    background: #4a0e0e;
     color: #fff;
     font-size: 0.92rem;
     border-radius: 6px;
@@ -546,7 +546,7 @@ main {
 }
 .recipe-card .category {
     font-size: 0.95rem;
-    color: #E65100;
+    color: #4a0e0a;
     margin: 0 1rem 0.5rem 1rem;
 }
 .recipe-card .tags {
@@ -558,7 +558,7 @@ main {
     list-style: none;
 }
 .recipe-card .tags li {
-    background: #C62828;
+    background: #4a0e0e;
     color: #fff;
     font-size: 0.85rem;
     border-radius: 6px;
@@ -578,7 +578,7 @@ main {
     transition: background 0.18s;
 }
 .recipe-card button:hover {
-    background: #E65100;
+    background: #4a0e0a;
 }
 
 
@@ -679,13 +679,13 @@ footer {
     color: #145218;
 }
 .contact-success strong {
-    color: #C62828;
+    color: #4a0e0e;
 }
 
 .contact-error {
     background: #ffebee;
-    border: 1.5px solid #C62828;
-    color: #C62828;
+    border: 1.5px solid #4a0e0e;
+    color: #4a0e0e;
     border-radius: 8px;
     padding: 1.2rem 1rem;
     margin: 1.5rem auto 1.5rem auto;
