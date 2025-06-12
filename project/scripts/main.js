@@ -1,6 +1,20 @@
 // Fetch and display recipes from JSON
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Footer Date and Last Modified Logic
+  (function() {
+    const footer = document.querySelector('footer p');
+    if (footer) {
+      const year = new Date().getFullYear();
+      const lastModified = new Date(document.lastModified);
+      const lastModStr = `${lastModified.getFullYear()}-${String(lastModified.getMonth()+1).padStart(2,'0')}-${String(lastModified.getDate()).padStart(2,'0')} ${String(lastModified.getHours()).padStart(2,'0')}:${String(lastModified.getMinutes()).padStart(2,'0')}`;
+      localStorage.setItem('recipemaster_last_modified', lastModStr);
+      // Build new footer HTML
+      let html = `&copy; ${year} RecipeMaster. All rights reserved. | <a href="siteplan.html">View Site Plan</a><br><span class="footer-meta">Last updated: <span id="last-modified">${lastModStr}</span></span>`;
+      footer.innerHTML = html;
+    }
+  })();
+
   // Contact form handler for about.html
   const contactForm = document.querySelector('.contact form');
   const responseDiv = document.getElementById('contact-response');
@@ -140,24 +154,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // On recipes.html
   if (document.querySelector('.recipe-grid')) {
-    const searchInput = document.querySelector('.recipe-search input[type="search"]');
-    if (searchInput) {
-      // Restore last search value
-      const lastSearch = localStorage.getItem('recipeSearch');
-      if (lastSearch) {
-        searchInput.value = lastSearch;
-      }
-      // Save search value on input
-      searchInput.addEventListener('input', () => {
-        localStorage.setItem('recipeSearch', searchInput.value);
-      });
-    }
     fetch('data/recipes.json')
       .then(res => res.json())
       .then(data => displayRecipes(data));
   }
 
-  // On index.html (show 3 featured)
   if (document.querySelector('.recipe-cards')) {
     fetch('data/recipes.json')
       .then(res => res.json())
@@ -178,6 +179,50 @@ function displayRecipes(recipes) {
   `).join('');
 }
 
+function showRecipe(id) {
+  const existing = document.getElementById('recipe-modal');
+  if (existing) existing.remove();
+
+  fetch('data/recipes.json')
+    .then(res => res.json())
+    .then(recipes => {
+      const recipe = recipes.find(r => String(r.id) === String(id));
+      if (!recipe) return;
+      const modal = document.createElement('div');
+      modal.id = 'recipe-modal';
+      modal.innerHTML = `
+        <div class="modal-overlay"></div>
+        <div class="modal-content" role="dialog" aria-modal="true" tabindex="-1">
+          <button class="modal-close" aria-label="Close">&times;</button>
+          <img src="${recipe.image}" alt="${recipe.name}" class="modal-img" onerror="this.style.display='none'">
+          <h2>${recipe.name}</h2>
+          <p class="category">${recipe.category || ''}</p>
+          <ul class="tags">${(recipe.tags||[]).map(tag => `<li>${tag}</li>`).join('')}</ul>
+          <h3>Ingredients</h3>
+          <ul class="ingredients">${(recipe.ingredients||[]).map(ing => `<li>${ing}</li>`).join('')}</ul>
+          <h3>Instructions</h3>
+          <ol class="instructions">${(recipe.steps||[]).map(step => `<li>${step}</li>`).join('')}</ol>
+        </div>
+      `;
+      document.body.appendChild(modal);
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => { modal.querySelector('.modal-content').focus(); }, 10);
+      function closeModal() {
+        modal.remove();
+        document.body.style.overflow = '';
+      }
+      modal.querySelector('.modal-close').onclick = closeModal;
+      modal.querySelector('.modal-overlay').onclick = closeModal;
+      document.addEventListener('keydown', function esc(e) {
+        if (e.key === 'Escape') {
+          closeModal();
+          document.removeEventListener('keydown', esc);
+        }
+      });
+    });
+}
+
+
 function displayFeaturedRecipes(recipes) {
   const cards = document.querySelector('.recipe-cards');
   const featured = recipes.slice(0, 3);
@@ -190,7 +235,48 @@ function displayFeaturedRecipes(recipes) {
   `).join('');
 }
 
-// Placeholder for recipe modal/detail
 function showRecipe(id) {
-  alert('Recipe details for ID: ' + id + '\n(Detail view coming soon!)');
+
+  const existing = document.getElementById('recipe-modal');
+  if (existing) existing.remove();
+
+  fetch('data/recipes.json')
+    .then(res => res.json())
+    .then(recipes => {
+      const recipe = recipes.find(r => String(r.id) === String(id));
+      if (!recipe) return;
+      const modal = document.createElement('div');
+      modal.id = 'recipe-modal';
+      modal.innerHTML = `
+        <div class="modal-overlay"></div>
+        <div class="modal-content" role="dialog" aria-modal="true" tabindex="-1">
+          <button class="modal-close" aria-label="Close">&times;</button>
+          <img src="${recipe.image}" alt="${recipe.name}" class="modal-img" onerror="this.style.display='none'">
+          <h2>${recipe.name}</h2>
+          <p class="category">${recipe.category || ''}</p>
+          <ul class="tags">${(recipe.tags||[]).map(tag => `<li>${tag}</li>`).join('')}</ul>
+          <h3>Ingredients</h3>
+          <ul class="ingredients">${(recipe.ingredients||[]).map(ing => `<li>${ing}</li>`).join('')}</ul>
+          <h3>Instructions</h3>
+          <ol class="instructions">${(recipe.instructions||[]).map(step => `<li>${step}</li>`).join('')}</ol>
+        </div>
+      `;
+      document.body.appendChild(modal);
+      document.body.style.overflow = 'hidden';
+      // Focus modal
+      setTimeout(() => { modal.querySelector('.modal-content').focus(); }, 10);
+      // Close logic
+      function closeModal() {
+        modal.remove();
+        document.body.style.overflow = '';
+      }
+      modal.querySelector('.modal-close').onclick = closeModal;
+      modal.querySelector('.modal-overlay').onclick = closeModal;
+      document.addEventListener('keydown', function esc(e) {
+        if (e.key === 'Escape') {
+          closeModal();
+          document.removeEventListener('keydown', esc);
+        }
+      });
+    });
 }
